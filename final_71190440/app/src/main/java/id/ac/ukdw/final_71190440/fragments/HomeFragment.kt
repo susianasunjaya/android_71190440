@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +40,8 @@ class HomeFragment : Fragment() {
 
         val i = inflater.inflate(R.layout.fragment_home, container, false)
         val addBtn = i.findViewById<FloatingActionButton>(R.id.fab_add)
+        val searchBtn = i.findViewById<Button>(R.id.searchBtn)
+        val etSearch = i.findViewById<EditText>(R.id.etSearch)
 
         movieRecyclerView = i.findViewById(R.id.rv_movie)
         movieRecyclerView.setHasFixedSize(true)
@@ -51,7 +55,6 @@ class HomeFragment : Fragment() {
             val intent = Intent(context, CrudActivity::class.java)
             startActivity(intent)
         }
-
 
         // Inflate the layout for this fragment
         return i
@@ -88,30 +91,9 @@ class HomeFragment : Fragment() {
 
         })
 
-//        dbref = FirebaseDatabase.getInstance().getReference("Movie")
-//
-//        dbref.addValueEventListener(object : ValueEventListener{
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//
-//                if(snapshot.exists()){
-//                    for (movieSnapshot in snapshot.children){
-//                        val movie = movieSnapshot.getValue(Movie::class.java)
-//                        movieArrayList.add(movie!!)
-//                    }
-////                    movieRecyclerView.setAdapter(MovieAdapter(movieArrayList))
-//                    movieRecyclerView.adapter = MovieAdapter(movieArrayList)
-//
-//                }
-//
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                TODO("Not yet implemented")
-//            }
-//
-//        })
-
     }
+
+
 }
 
 //    companion object {
