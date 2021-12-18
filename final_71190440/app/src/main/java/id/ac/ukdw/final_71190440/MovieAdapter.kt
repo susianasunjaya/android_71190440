@@ -51,7 +51,7 @@ class MovieAdapter(private val movieList:ArrayList<Movie>): RecyclerView.Adapter
                 intent.putExtra("judul",movie.Judul)
                 intent.putExtra("tahun",movie.Tahun)
                 intent.putExtra("genre",movie.Genre)
-                intent.putExtra("duration",movie.Genre)
+                intent.putExtra("duration",movie.Duration)
                 intent.putExtra("movieId",movie.movieId)
 
                 movieView.context.startActivity(intent)

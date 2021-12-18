@@ -26,6 +26,7 @@ class DetailMovie : AppCompatActivity(R.layout.movie_detail) {
         val duration = intent.getStringExtra("duration")
         val movieId = intent.getStringExtra("movieId")
 
+        Toast.makeText(this,duration,Toast.LENGTH_SHORT).show()
 
         val tiJudul = findViewById<TextInputEditText>(R.id.ti_judul)
         val tiTahun = findViewById<TextInputEditText>(R.id.ti_tahun)
@@ -37,7 +38,6 @@ class DetailMovie : AppCompatActivity(R.layout.movie_detail) {
 
 
         fun String.toEditable(): Editable =  Editable.Factory.getInstance().newEditable(this)
-
         tiJudul.text = judul?.toEditable()
         tiTahun.text = tahun?.toEditable()
         tiGenre.text = genre?.toEditable()

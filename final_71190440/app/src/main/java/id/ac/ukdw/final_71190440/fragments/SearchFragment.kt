@@ -57,7 +57,7 @@ class SearchFragment : Fragment() {
             val cari = etSearch.text.toString()
 
             if(cari.isNotEmpty()){
-                readData(cari)
+                readData(cari.trim())
             }else{
                 Toast.makeText(activity,"Masukkan judul", Toast.LENGTH_SHORT).show()
             }
@@ -102,6 +102,58 @@ class SearchFragment : Fragment() {
     private fun readData(cari: String){
         dbref = FirebaseDatabase.getInstance().getReference("Movie")
         dbref.orderByChild("judul").equalTo(cari).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var movieList:ArrayList<Movie> = ArrayList()
+                movieList.clear()
+
+                if(snapshot.exists()){
+                    for (movieSnapshot in snapshot.children){
+                        val movie = movieSnapshot.getValue(Movie::class.java)
+                        movieList.add(movie!!)
+                    }
+                    var movieAdapter = MovieAdapter(movieList)
+                    movieRecyclerView.apply {
+                        movieRecyclerView.layoutManager = LinearLayoutManager(context)
+                        movieRecyclerView.adapter = movieAdapter
+                    }
+
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+        dbref.orderByChild("tahun").equalTo(cari).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                var movieList:ArrayList<Movie> = ArrayList()
+                movieList.clear()
+
+                if(snapshot.exists()){
+                    for (movieSnapshot in snapshot.children){
+                        val movie = movieSnapshot.getValue(Movie::class.java)
+                        movieList.add(movie!!)
+                    }
+                    var movieAdapter = MovieAdapter(movieList)
+                    movieRecyclerView.apply {
+                        movieRecyclerView.layoutManager = LinearLayoutManager(context)
+                        movieRecyclerView.adapter = movieAdapter
+                    }
+
+                }
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+        dbref.orderByChild("genre").equalTo(cari).addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 var movieList:ArrayList<Movie> = ArrayList()
                 movieList.clear()
