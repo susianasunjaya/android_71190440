@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.*
 import id.ac.ukdw.final_71190440.CrudActivity
 import id.ac.ukdw.final_71190440.Movie
@@ -39,8 +41,8 @@ class SearchFragment : Fragment() {
     ): View? {
 
         val i = inflater.inflate(R.layout.fragment_search, container, false)
-        val searchBtn = i.findViewById<Button>(R.id.searchBtn)
-        val etSearch = i.findViewById<EditText>(R.id.etSearch)
+        val searchBtn = i.findViewById<ImageButton>(R.id.searchBtn)
+        val etSearch = i.findViewById<TextInputEditText>(R.id.etSearch)
 
         movieRecyclerView = i.findViewById(R.id.rv_movie)
         movieRecyclerView.setHasFixedSize(true)
