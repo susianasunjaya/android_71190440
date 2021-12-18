@@ -101,9 +101,15 @@ class MainActivity : AppCompatActivity() {
                 //ambil info user
                 val uid =firebaseUser!!.uid
                 val email = firebaseUser.email
+                val uphoto = firebaseUser.photoUrl
+                val displayname = firebaseUser.displayName
 
                 Log.d(TAG, "firebaseAuthWithGoogleAccount: Uid: $uid")
                 Log.d(TAG, "firebaseAuthWithGoogleAccount: Email: $email")
+
+                Log.d(TAG, "firebaseAuthWithGoogleAccount: PhotoUrl: $uphoto")
+                Log.d(TAG, "firebaseAuthWithGoogleAccount: DisplayName: $displayname")
+
 
                 //cek apakah baru atau lama
                 if (authResult.additionalUserInfo!!.isNewUser){

@@ -26,8 +26,6 @@ class DetailMovie : AppCompatActivity(R.layout.movie_detail) {
         val duration = intent.getStringExtra("duration")
         val movieId = intent.getStringExtra("movieId")
 
-        Toast.makeText(this,duration,Toast.LENGTH_SHORT).show()
-
         val tiJudul = findViewById<TextInputEditText>(R.id.ti_judul)
         val tiTahun = findViewById<TextInputEditText>(R.id.ti_tahun)
         val tiGenre = findViewById<TextInputEditText>(R.id.ti_genre)
