@@ -27,7 +27,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textSize="20sp"
+            android:textSize="19sp"
+            android:textColor="@color/official_color1"
+            android:textStyle="bold"
             tools:text="JUDUL MOVIE" />
 
         <TextView
@@ -35,27 +37,30 @@
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="48dp"
             android:layout_marginLeft="16dp"
-            tools:text="Tahun Rilis" />
+            tools:text="Tahun Rilis"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_genre"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="74dp"
+            android:layout_marginTop="70dp"
             android:layout_marginLeft="16dp"
-            tools:text="Genre" />
+            tools:text="Genre"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/tv_duration"
             style="@style/TextAppearance.MaterialComponents.Caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="98dp"
+            android:layout_marginTop="93dp"
             android:layout_marginLeft="16dp"
             android:layout_marginBottom="16dp"
+            android:textColor="@color/black"
             tools:text="Duration" />
 
         <TextView

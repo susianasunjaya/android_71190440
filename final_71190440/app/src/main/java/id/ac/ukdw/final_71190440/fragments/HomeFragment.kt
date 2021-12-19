@@ -40,8 +40,6 @@ class HomeFragment : Fragment() {
 
         val i = inflater.inflate(R.layout.fragment_home, container, false)
         val addBtn = i.findViewById<FloatingActionButton>(R.id.fab_add)
-        val searchBtn = i.findViewById<Button>(R.id.searchBtn)
-        val etSearch = i.findViewById<EditText>(R.id.etSearch)
 
         movieRecyclerView = i.findViewById(R.id.rv_movie)
         movieRecyclerView.setHasFixedSize(true)

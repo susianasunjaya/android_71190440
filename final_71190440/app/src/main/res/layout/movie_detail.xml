@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".CrudActivity">
+    tools:context=".DetailMovie">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -112,6 +112,7 @@
                 android:text="EDIT"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
+                android:backgroundTint="@color/official_color1"
                 app:layout_constraintEnd_toEndOf="@+id/textInputJudul"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputJudul"
@@ -125,6 +126,7 @@
                 android:text="DELETE"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
+                android:backgroundTint="@color/official_color1"
                 app:layout_constraintEnd_toEndOf="@+id/textInputJudul"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputJudul"

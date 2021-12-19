@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             Log.d(TAG, "onActivityResult: Google SignIn intent result")
             val accountTask = GoogleSignIn.getSignedInAccountFromIntent(data)
             try{
-                //sukses sign in
+                //sukses sign in, authenticate dengan firebase
                 val account = accountTask.getResult(ApiException::class.java)
                 firebaseAuthWithGoogleAccount(account)
             }catch (e: Exception){

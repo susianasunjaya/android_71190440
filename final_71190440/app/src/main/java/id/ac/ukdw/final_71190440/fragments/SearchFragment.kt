@@ -59,7 +59,7 @@ class SearchFragment : Fragment() {
             if(cari.isNotEmpty()){
                 readData(cari.trim())
             }else{
-                Toast.makeText(activity,"Masukkan judul", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity,"Masukkan Kata Kunci Pencarian", Toast.LENGTH_SHORT).show()
             }
 
         }

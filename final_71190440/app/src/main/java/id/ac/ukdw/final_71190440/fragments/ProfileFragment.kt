@@ -54,9 +54,6 @@ class ProfileFragment : Fragment() {
 
         // Inflate the layout for this fragment
 //            binding = ActivityProfileBinding.inflate(layoutInflater, container, false)
-//            Ini di fragment jadi gabisa huhu setContentView(binding.root)
-//            super.onViewCreated(binding.root,savedInstanceState)
-
 
 
         //init firebase auth
@@ -70,17 +67,13 @@ class ProfileFragment : Fragment() {
             val emailTv = i.findViewById<TextView>(R.id.emailTv)
             val uphoto = i.findViewById<ImageView>(R.id.ivProfile)
             val dname = i.findViewById<TextView>(R.id.nameTv)
-            checkUserLogin()
+            checkUser()
 
             emailTv.setText(infoList.get(0))
             dname.setText(infoList.get(1))
             val imgUrl: String = infoList.get(2)
 
             Glide.with(this).load(imgUrl).apply(RequestOptions.circleCropTransform()).into(uphoto)
-
-//            uphoto.setImageURI(null)
-//            uphoto.setImageURI(imgUrl.toUri())
-//            uphoto.setImageURI(Uri.parse(infoList.get(1)))
 
             logoutBtn.setOnClickListener{
                 firebaseAuth.signOut()
@@ -92,38 +85,36 @@ class ProfileFragment : Fragment() {
     private fun checkUser() {
         //get current user
         val firebaseUser = firebaseAuth.currentUser
+        infoList.clear()
         if (firebaseUser==null){
             //user not logged in
             startActivity(Intent(activity, MainActivity::class.java))
             activity?.finish()
-//        }else{
-//            //user logged in
-//            //get user info
-//            val email = firebaseUser.email
-//            val uphoto = firebaseUser.photoUrl
-            //set email
-//            emailTv.text = email.toString()
-//            activity?.findViewById<TextView>(R.id.emailTv)?.text = (email.toString())
-//            activity?.findViewById<ImageView>(R.id.ivProfile)?.setImageURI(uphoto)
-        }
-    }
-
-    private fun checkUserLogin() {
-        //get current user
-        val firebaseUser = firebaseAuth.currentUser
-        infoList.clear()
-
-        if (firebaseUser!=null){
-            //user not logged in
+        }else{
             val email = firebaseUser.email
             val dname = firebaseUser.displayName
             val uphoto = firebaseUser.photoUrl
             infoList.add(email.toString())
             infoList.add(dname.toString())
             infoList.add(uphoto.toString())
-//            Toast.makeText(activity,uphoto.toString(),Toast.LENGTH_SHORT).show()
         }
     }
+
+//    private fun checkUserLogin() {
+//        //get current user
+//        val firebaseUser = firebaseAuth.currentUser
+//        infoList.clear()
+//
+//        if (firebaseUser!=null){
+//            //user not logged in
+//            val email = firebaseUser.email
+//            val dname = firebaseUser.displayName
+//            val uphoto = firebaseUser.photoUrl
+//            infoList.add(email.toString())
+//            infoList.add(dname.toString())
+//            infoList.add(uphoto.toString())
+//        }
+//    }
 
 
 //    companion object {
